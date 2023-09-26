@@ -4,7 +4,7 @@ This activity checks dwell status for a given ItemId. If no device logs exist, t
 
 ## NOTE
 
-GracePeriod >= 2 minutes. Data takes about 1 minute to enter the database.
+GracePeriod >= 2 minutes. Zone data takes about one minute to be logged in the database.
 
 ## Configuration
 
