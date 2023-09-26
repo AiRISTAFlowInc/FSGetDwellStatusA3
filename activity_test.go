@@ -20,8 +20,7 @@ func TestEval(t *testing.T) {
 
 	act := &Activity{}
 	tc := test.NewActivityContext(act.Metadata())
-	input := &Input{IP: "52.45.17.177:802", CustomerId: "1", Username: "afadmin", Password: "admin", StaffItem: "35992", ZoneItem: "26960"}
-	// StaffId: "35992"
+	input := &Input{IP: "3.212.201.170:802", CustomerId: "2047", Username: "afadmin", Password: "admin", MAC: "C4:CB:6B:23:24:D0",GracePeriod: "2", ZoneItem: "Patient Room"}
 	// ZoneItem: "26960" OR "{\"ZoneID\":26960,\"ZoneName\":\"Entrance\",\"ZoneType\":\"Open\"}" OR "Entrance"
 	//TESTING TIMES MUST BE SET in the activty to have true returned
 		// StartDateTime = "2023-07-27 16:47:48.807"
@@ -38,5 +37,5 @@ func TestEval(t *testing.T) {
 	err = tc.GetOutputObject(output)
 	assert.Nil(t, err)
 
-	assert.Equal(t, false, output.DwellStatus)
+	assert.Equal(t, true, output.DwellStatus)
 }

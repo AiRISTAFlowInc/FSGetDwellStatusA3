@@ -9,7 +9,8 @@ type Input struct {
 	CustomerId string`md:"CustomerId,required"`
 	Username string `md:"Username,required"`
 	Password string `md:"Password,required"`
-	StaffItem string `md:"StaffItem,required"`
+	MAC string `md:"MAC,required"`
+	GracePeriod string `md:"GracePeriod,required"`
 	ZoneItem string `md:"ZoneItem,required"`
 }
 
@@ -26,8 +27,11 @@ func (i *Input) FromMap(values map[string]interface{}) error {
 	strVal, _ = coerce.ToString(values["Password"])
 	i.Password = strVal
 
-	strVal, _ = coerce.ToString(values["StaffItem"])
-	i.StaffItem = strVal
+	strVal, _ = coerce.ToString(values["MAC"])
+	i.MAC = strVal
+
+	strVal, _ = coerce.ToString(values["GracePeriod"])
+	i.GracePeriod = strVal
 
 	strVal, _ = coerce.ToString(values["ZoneItem"])
 	i.ZoneItem = strVal
@@ -41,7 +45,8 @@ func (i *Input) ToMap() map[string]interface{} {
 		"CustomerId": i.CustomerId,
 		"Username": i.Username,
 		"Password": i.Password,
-		"StaffItem": i.StaffItem,
+		"MAC": i.MAC,
+		"GracePeriod":i.GracePeriod,
 		"ZoneItem": i.ZoneItem,
 	}
 }
@@ -110,4 +115,7 @@ type Zone struct {
 	ZoneID   int    `json:"ZoneID"`
 	ZoneName string `json:"ZoneName"`
 	ZoneType string `json:"ZoneType"`
+}
+type Device struct {
+	ItemID                   int       `json:"ItemId"`
 }

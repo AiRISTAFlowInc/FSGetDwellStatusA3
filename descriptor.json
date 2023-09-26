@@ -2,7 +2,7 @@
   "name": "Get Dwell Status",
   "type": "flogo:activity",
   "version": "0.0.1",
-  "title": "A2: Get Dwell Status",
+  "title": "A3: Get Dwell Status",
   "description": "Returns Dwell Status Boolean",
   "homepage": "https://github.com/AiRISTAFlowInc/FlowActivities/tree/main/GetDwellTime",
   "input": [
@@ -27,7 +27,12 @@
       "required": true
     },
     {
-      "name": "StaffItem",
+      "name": "MAC",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "GracePeriod",
       "type": "string",
       "required": true
     },
